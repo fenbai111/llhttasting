@@ -1,0 +1,2 @@
+mybatis:
+  mapperLocations: classpath:mybatis/*Mapper.xml

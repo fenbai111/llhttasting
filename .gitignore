@@ -1,0 +1,7 @@
+/target
+/src/main/webapp/gulp/node_modules
+/src/main/resources/application.properties
+/src/main/webapp/gulp
+/src/main/webapp/gulp/gulpfile.js
+/src/main/webapp/gulp/package.json
+/src/main/webapp/gulp/doc.log

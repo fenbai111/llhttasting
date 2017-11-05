@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jlt.vote.job">
+
+    <select id="queryWxCheatRecord" resultType="java.util.Map">
+        SELECT a.userId,a.ipAddress,COUNT(1) AS voteDayCount,DATE_FORMAT(a.voteTime, '%Y-%m-%d') AS stepDate
+               ,b.name,b.number
+        FROM t_t_user_vote_record a
+        LEFT JOIN t_t_user b ON a.userId = b.id
+        WHERE a.dataStatus = 1 AND voteType = 1 AND DATE_FORMAT(a.voteTime, '%Y-%m-%d') = DATE_FORMAT(NOW(), '%Y-%m-%d')
+        GROUP BY a.userId,a.ipAddress,stepDate
+        HAVING voteDayCount > 1
+        ORDER BY stepDate DESC
+    </select>
+
+</mapper>
