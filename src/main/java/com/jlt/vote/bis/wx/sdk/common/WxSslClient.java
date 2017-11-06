@@ -43,8 +43,8 @@ public class WxSslClient {
             keyStore = KeyStore.getInstance("PKCS12");
             PathMatchingResourcePatternResolver patternResolver = new PathMatchingResourcePatternResolver();
             Resource[] resources = patternResolver.getResources("apiclient_cert.p12");
-            keyStore.load(resources[0].getInputStream(), "1484988012".toCharArray());
-            sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, "1484988012".toCharArray()).build();
+            keyStore.load(resources[0].getInputStream(), "1489751762".toCharArray());
+            sslcontext = SSLContexts.custom().loadKeyMaterial(keyStore, "1489751762".toCharArray()).build();
         } catch (Exception e) {
             logger.error("initializing WxHttpsClient failed.", e);
             throw new WxRuntimeException(999, e.getMessage());
